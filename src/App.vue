@@ -4,9 +4,12 @@
       <div>雲林縣室內空氣品質</div>
       <div>連續監測即時資訊</div>
     </div>
-    <main class="content">
-      <Box v-for="item in 8" :key="item" />
-    </main>
+    <div class="content">
+      <Box v-for="item in 8" :key="item" width="22%" />
+    </div>
+    <div class="second-content">
+      <Box v-for="item in 5" :key="item" width="18%" />
+    </div>
     <Footer />
   </div>
 </template>
@@ -26,6 +29,7 @@ export default {
     let arr = reactive({ data: [] });
     onMounted(() => {
       const url = "http://localhost:3000/api_v2/test/avid";
+      // const url = "http://www.jnc-demo.tw:11223/JSONDeviceCH"; //中央API
       const list = ["A123", "B122", "C124", "D789"];
       let promiseList = list.map((el) => axios.put(`${url}?id=${el}`));
       Promise.all(promiseList).then((res) => {
@@ -55,7 +59,7 @@ body {
   width: 100%;
   background-image: url("assets/background.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 100% 21%;
   background-size: cover;
 }
 .wrapper {
@@ -76,5 +80,11 @@ body {
   padding-bottom: 30px;
   column-gap: 50px;
   row-gap: 20px;
+}
+.second-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 30px;
 }
 </style>

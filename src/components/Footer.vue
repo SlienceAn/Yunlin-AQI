@@ -13,11 +13,11 @@
       </div>
     </span>
     <span class="footer-view">
-        <span></span>
-        <span>
-            <div>瀏覽人次</div>
-            <div>123,456,789</div>
-        </span>
+      <div class="footer-view-img"></div>
+      <div class="footer-view-text">
+        <div>瀏覽人次</div>
+        <div>12,345,678</div>
+      </div>
     </span>
   </footer>
 </template>
@@ -30,7 +30,10 @@ export default {
 
 <style scoped>
 .footer {
-  padding: 0 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  padding: 0 15px;
   display: flex;
   justify-content: space-between;
 }
@@ -45,5 +48,16 @@ export default {
   font-weight: bolder;
 }
 .footer-view {
+  width: 10%;
+  color: green;
+}
+.footer-view-img {
+  width: 20%;
+  background-image: url("../assets/viewer.png");
+  background-position: center;
+  background-size: cover;
+}
+.footer-view-text {
+  text-align: center;
 }
 </style>
