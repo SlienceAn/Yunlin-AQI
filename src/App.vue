@@ -5,18 +5,26 @@
       <div>連續監測即時資訊</div>
     </div>
     <div class="content">
-      <Box v-for="item in 8" :key="item" width="22%" />
+      <Box
+        v-for="item in [0, 1, 2, 3, 4, 5, 6, 7]"
+        :key="item"
+        width="22%"
+        :DeviceIdx="item"
+      />
     </div>
     <div class="second-content">
-      <Box v-for="item in 5" :key="item" width="18%" />
+      <Box
+        v-for="item in [8, 9, 10, 11, 12]"
+        :key="item"
+        width="18%"
+        :DeviceIdx="item"
+      />
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import { onMounted, reactive } from "vue";
 import Box from "./components/Box.vue";
 import Footer from "./components/Footer.vue";
 export default {
@@ -24,21 +32,6 @@ export default {
   components: {
     Box,
     Footer,
-  },
-  setup() {
-    let arr = reactive({ data: [] });
-    onMounted(() => {
-      const url = "http://localhost:3000/api_v2/test/avid";
-      // const url = "http://www.jnc-demo.tw:11223/JSONDeviceCH"; //中央API
-      const list = ["A123", "B122", "C124", "D789"];
-      let promiseList = list.map((el) => axios.put(`${url}?id=${el}`));
-      Promise.all(promiseList).then((res) => {
-        arr.data = res.map((el) => el["data"]);
-      });
-    });
-    return {
-      arr,
-    };
   },
 };
 </script>
