@@ -9,7 +9,8 @@
         >
           <span v-if="val.TagName === 'CO2'"> CO<sub>2</sub> </span>
           <span v-else>PM<sub>2.5</sub></span>
-          <span>{{ val.Value }}</span>
+          <span v-if="val.Value">{{ val.Value }}</span>
+          <span v-else>--</span>
           <span>{{ val.Unit }}</span>
         </div>
       </div>
