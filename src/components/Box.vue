@@ -32,12 +32,14 @@ export default {
       const nameUrl = `http://www.jnc-demo.tw:11223/JSONDevice?Idx=${props.DeviceIdx}&Key=VHNwb3J0AQ%3D%3D`;
       const dataPromise = axios.get(url);
       const namePromise = axios.get(nameUrl);
-      Promise.all([dataPromise, namePromise])
-        .then((res) => {
-          data.data = res[0].data;
-          deviceName.data = res[1].data;
-        })
-        .catch((err) => console.log(err));
+      setInterval(() => {
+        Promise.all([dataPromise, namePromise])
+          .then((res) => {
+            data.data = res[0].data;
+            deviceName.data = res[1].data;
+          })
+          .catch((err) => console.log(err));
+      }, 3 * 60 * 1000);
     });
     return {
       data,
