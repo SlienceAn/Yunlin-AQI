@@ -27,7 +27,6 @@
 <script>
 import Box from "./components/Box.vue";
 import Footer from "./components/Footer.vue";
-import { } from "vue";
 export default {
   name: "App",
   components: {
