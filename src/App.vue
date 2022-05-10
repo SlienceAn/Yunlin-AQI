@@ -1,5 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div class="common">A</div>
+  <div class="common">B</div>
+  <div class="common">C</div>
+  <!-- <div class="wrapper">
     <div class="title">
       <div>雲林縣室內空氣品質</div>
       <div>連續監測即時資訊</div>
@@ -21,22 +24,44 @@
       />
     </div>
     <Footer />
-  </div>
+  </div> -->
 </template>
 
 <script>
+import { onMounted } from "vue";
 import Box from "./components/Box.vue";
 import Footer from "./components/Footer.vue";
+import { useStore } from "vuex";
 export default {
   name: "App",
   components: {
     Box,
     Footer,
   },
+  setup() {
+    const store = useStore();
+    const gogo = () => {
+      store.commit("change");
+    };
+    onMounted(() => {
+      console.log(store.state.count);
+    });
+    return {
+      gogo,
+      store,
+    };
+  },
 };
 </script>
   
 <style>
+.common {
+  width: 100%;
+  border: 1px solid #fff;
+  height: 30vh;
+  font-size: 5vh;
+  text-align: center;
+}
 * {
   font-family: "微軟正黑體";
   box-sizing: border-box;

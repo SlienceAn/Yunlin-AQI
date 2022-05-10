@@ -2,7 +2,7 @@
   <div class="card" :style="{ width: width }">
     <div v-if="!isShow" class="card-title">--</div>
     <div v-else class="card-title">
-      {{ deviceName.data.DeviceName.substring(2) }}
+      {{ deviceName.data.DeviceName }}
     </div>
     <div class="card-body">
       <div v-for="val in data.data.Device" :key="val.TagName">
@@ -12,7 +12,7 @@
         >
           <span v-if="val.TagName === 'CO2'"> CO<sub>2</sub></span>
           <span v-else>PM<sub>2.5</sub></span>
-          <span v-if="isShow && val.Value">{{ val.Value }}</span>
+          <span v-if="isShow && val.Value > 0">{{ val.Value }}</span>
           <span v-else>--</span>
           <span>{{ val.Unit }}</span>
         </div>
