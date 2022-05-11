@@ -9,7 +9,7 @@
       </span>
     </span>
     <span class="footer-view">
-      <div class="footer-view-img"></div>
+      <div class="footer-view-img" />
       <div class="footer-view-text">
         <div>瀏覽人次</div>
         <div>12,345,678</div>
@@ -38,7 +38,6 @@ export default {
 .footer {
   width: 100%;
   height: 15vh;
-  bottom: 10px;
   padding: 0 15px;
   display: flex;
   justify-content: space-between;
@@ -53,9 +52,11 @@ export default {
 .footer-text {
   color: white;
   font-weight: bolder;
+  font-size: 2vh;
   height: 100%;
   display: flex;
   align-items: flex-end;
+  margin-left: -10vh;
 }
 .footer-view {
   width: 10%;
