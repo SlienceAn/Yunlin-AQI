@@ -64,26 +64,28 @@ export default {
 <style scoped>
 .card {
   background: rgb(226, 240, 217);
-  border-radius: 15px;
+  border-radius: 2.5vh;
 }
 .card-title {
   background: rgb(169, 209, 142);
-  padding: 5px 15px;
+  padding: 1vh 1.5vh;
   color: white;
   font-weight: bolder;
-  border-radius: 15px;
+  font-size: 2.3vh;
+  border-radius: 2.5vh;
 }
 .card-body {
   font-weight: bolder;
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
+  font-size: 2.3vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 2vh;
 }
 .card-body-content {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 15px;
+  padding-bottom: 2vh;
 }
 </style>

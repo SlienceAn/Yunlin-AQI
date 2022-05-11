@@ -38,7 +38,6 @@ export default {
 .footer {
   width: 100%;
   height: 15vh;
-  position: fixed;
   bottom: 10px;
   padding: 0 15px;
   display: flex;

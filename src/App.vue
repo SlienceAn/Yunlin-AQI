@@ -1,21 +1,26 @@
 <template>
-  <div class="common">A</div>
-  <div class="common">B</div>
-  <div class="common">C</div>
-  <!-- <div class="wrapper">
+  <div class="wrapper">
     <div class="title">
       <div>雲林縣室內空氣品質</div>
       <div>連續監測即時資訊</div>
     </div>
     <div class="content">
       <Box
-        v-for="item in [0, 1, 2, 3, 4, 5, 6, 7]"
+        v-for="item in [0, 1, 2, 3]"
         :key="item"
-        width="22%"
+        width="25%"
         :DeviceIdx="item"
       />
     </div>
     <div class="second-content">
+      <Box
+        v-for="item in [4, 5, 6, 7]"
+        :key="item"
+        width="25%"
+        :DeviceIdx="item"
+      />
+    </div>
+    <div class="third-content">
       <Box
         v-for="item in [8, 9, 10, 11, 12]"
         :key="item"
@@ -24,7 +29,7 @@
       />
     </div>
     <Footer />
-  </div> -->
+  </div>
 </template>
 
 <script>
@@ -55,13 +60,6 @@ export default {
 </script>
   
 <style>
-.common {
-  width: 100%;
-  border: 1px solid #fff;
-  height: 30vh;
-  font-size: 5vh;
-  text-align: center;
-}
 * {
   font-family: "微軟正黑體";
   box-sizing: border-box;
@@ -73,11 +71,11 @@ html {
   margin: 0px;
 }
 body {
-  max-height: 98%;
+  max-height: 108%;
   width: 100%;
   background-image: url("assets/background.jpg");
   background-repeat: no-repeat;
-  background-position: 100% 21%;
+  background-position: 100% 20%;
   background-size: cover;
 }
 .wrapper {
@@ -85,24 +83,26 @@ body {
 }
 .title {
   text-align: center;
-  font-size: 48px;
+  font-size: 6vh;
   font-weight: bolder;
-  padding-bottom: 15px;
+  min-height: 15vh;
 }
-.content {
+.content,
+.second-content {
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 30px;
-  column-gap: 50px;
-  row-gap: 20px;
+  padding: 2vh 0;
+  gap: 5vh;
 }
-.second-content {
+.third-content {
+  min-height: 20vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 30px;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2.5vh 0;
 }
 </style>
