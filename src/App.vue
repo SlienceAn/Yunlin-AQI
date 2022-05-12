@@ -33,28 +33,13 @@
 </template>
 
 <script>
-import { onMounted } from "vue";
 import Box from "./components/Box.vue";
 import Footer from "./components/Footer.vue";
-import { useStore } from "vuex";
 export default {
   name: "App",
   components: {
     Box,
     Footer,
-  },
-  setup() {
-    const store = useStore();
-    const gogo = () => {
-      store.commit("change");
-    };
-    onMounted(() => {
-      console.log(store.state.count);
-    });
-    return {
-      gogo,
-      store,
-    };
   },
 };
 </script>
@@ -66,7 +51,7 @@ export default {
 }
 body,
 html {
-  height: 98%;
+  height: 100%;
   padding: 0px;
   margin: 0px;
 }
