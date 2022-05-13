@@ -53,7 +53,7 @@ export default {
 .footer {
   box-sizing: border-box;
   width: 100%;
-  height: 16vh;
+  height: 16.5vh;
   padding-top: 1.5vh;
   padding-right: 2vh;
   padding-left: 2vh;

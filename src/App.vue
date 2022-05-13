@@ -58,9 +58,9 @@ html {
 body {
   max-height: 108%;
   width: 100%;
-  background-image: url("assets/background.jpg");
+  background-image: url("assets/background2.jpg");
   background-repeat: no-repeat;
-  background-position: 100% 20%;
+  background-position: bottom right;
   background-size: cover;
 }
 .wrapper {
